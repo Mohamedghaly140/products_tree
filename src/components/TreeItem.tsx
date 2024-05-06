@@ -3,28 +3,37 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import ProductsTree from './ProductsTree';
 
 interface TreeItemProps {
-  id: number;
-  name: string;
   selected?: boolean;
-  onPress?: () => void;
-  children?: Array<{ id: number; name: string }>;
+  item: Item;
   level: number;
+  onSelect: (item: Item) => void;
+  selectedItems: Array<Item>;
 }
 
 const TreeItem: React.FC<TreeItemProps> = ({
-  name,
-  onPress,
+  onSelect,
   selected,
-  children,
   level,
+  item,
+  selectedItems,
 }) => {
+  const { name, children } = item;
   return (
     <View>
-      <Pressable style={styles.container} onPress={onPress}>
-        <Text>{selected ? '✓' : '-'}</Text>
+      <Pressable style={styles.container} onPress={() => onSelect(item)}>
+        <View style={styles.checkbox}>
+          <Text>{selected ? '✓' : ''}</Text>
+        </View>
         <Text>{name}</Text>
       </Pressable>
-      {children && <ProductsTree level={level} data={children} />}
+      {children && (
+        <ProductsTree
+          level={level}
+          data={children}
+          onSelect={onSelect}
+          selectedItems={selectedItems}
+        />
+      )}
     </View>
   );
 };
@@ -36,5 +45,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     columnGap: 8,
     paddingVertical: 4,
+  },
+  checkbox: {
+    width: 16,
+    height: 16,
+    borderWidth: 1,
+    borderColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

@@ -1,0 +1,155 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "phones",
+      "children": [
+        {
+          "id": 1,
+          "name": "Apple",
+          "children": [
+            {
+              "id": 1,
+              "name": "iPhone 7",
+              "children": [
+                { "id": 1, "name": "128 GB", "parentName": "iPhone 7" },
+                { "id": 2, "name": "256 GB", "parentName": "iPhone 7" },
+                { "id": 3, "name": "512 GB", "parentName": "iPhone 7" }
+              ]
+            },
+            {
+              "id": 2,
+              "name": "iPhone 8",
+              "children": [
+                { "id": 4, "name": "64 GB", "parentName": "iPhone 8" },
+                { "id": 5, "name": "256 GB", "parentName": "iPhone 8" }
+              ]
+            },
+            {
+              "id": 3,
+              "name": "iPhone X",
+              "children": [
+                { "id": 6, "name": "64 GB", "parentName": "iPhone X" },
+                { "id": 7, "name": "256 GB", "parentName": "iPhone X" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Samsung",
+          "children": [
+            {
+              "id": 4,
+              "name": "Galaxy S10",
+              "children": [
+                { "id": 8, "name": "128 GB", "parentName": "Galaxy S10" },
+                { "id": 9, "name": "512 GB", "parentName": "Galaxy S10" }
+              ]
+            },
+            {
+              "id": 5,
+              "name": "Galaxy Note 10",
+              "children": [
+                { "id": 10, "name": "256 GB", "parentName": "Galaxy Note 10" },
+                { "id": 11, "name": "512 GB", "parentName": "Galaxy Note 10" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "computers",
+      "children": [
+        {
+          "id": 3,
+          "name": "Apple",
+          "children": [
+            {
+              "id": 6,
+              "name": "MacBook Air",
+              "children": [
+                { "id": 12, "name": "13-inch", "parentName": "MacBook Air" },
+                { "id": 13, "name": "15-inch", "parentName": "MacBook Air" }
+              ]
+            },
+            {
+              "id": 7,
+              "name": "MacBook Pro",
+              "children": [
+                { "id": 14, "name": "13-inch", "parentName": "MacBook Pro" },
+                { "id": 15, "name": "15-inch", "parentName": "MacBook Pro" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Dell",
+          "children": [
+            {
+              "id": 8,
+              "name": "Dell XPS",
+              "children": [
+                { "id": 16, "name": "13-inch", "parentName": "Dell" },
+                { "id": 17, "name": "15-inch", "parentName": "Dell" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "watches",
+      "children": [
+        {
+          "id": 5,
+          "name": "Apple Watch",
+          "children": [
+            {
+              "id": 9,
+              "name": "Apple Watch Series 6",
+              "children": [
+                {
+                  "id": 18,
+                  "name": "Silver 40mm",
+                  "parentName": "Apple Watch Series 6"
+                },
+                {
+                  "id": 19,
+                  "name": "Space Gray 44mm",
+                  "parentName": "Apple Watch Series 6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Samsung",
+          "children": [
+            {
+              "id": 10,
+              "name": "Samsung Galaxy Watch",
+              "children": [
+                {
+                  "id": 20,
+                  "name": "Black 42mm",
+                  "parentName": "Samsung Galaxy Watch"
+                },
+                {
+                  "id": 21,
+                  "name": "Rose Gold 46mm",
+                  "parentName": "Samsung Galaxy Watch"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
