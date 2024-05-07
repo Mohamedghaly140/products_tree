@@ -18,19 +18,36 @@ interface CardsViewProps {
 //   }, {} as Record<K, T[]>);
 // }
 
-const CardsView: React.FC<CardsViewProps> = ({ items }) => {
-  // const groupedItems = groupBy<Item, 'parentName'>(items, 'parentName');
-  // console.log(Object.entries(groupedItems));
+function groupItemsByParentName(items: Item[]): Record<string, Item[]> {
+  return items.reduce((groups, item) => {
+    const groupKey = item.parentName || 'NoParent';
+    groups[groupKey] = groups[groupKey] || [];
+    groups[groupKey].push(item);
+    return groups;
+  }, {} as Record<string, Item[]>);
+}
 
-  return (
-    <View style={styles.container}>
-      {items.map(item => (
-        <ItemCard key={`${item.id}-${item.name}`}>
-          {item.parentName ?? ''} {item.name}
+const CardsView: React.FC<CardsViewProps> = ({ items }) => {
+  const groupedItems = groupItemsByParentName(items);
+
+  const renderItems = Object.entries(groupedItems).map(
+    ([parentName, variants]) => {
+      if (parentName === 'NoParent') {
+        return variants.map(variant => (
+          <ItemCard key={`${variant.id}-${variant.name}`}>
+            {variant.name}
+          </ItemCard>
+        ));
+      }
+      return (
+        <ItemCard key={parentName}>
+          {parentName} {variants.map(variant => variant.name).join(', ')}
         </ItemCard>
-      ))}
-    </View>
+      );
+    },
   );
+
+  return <View style={styles.container}>{renderItems}</View>;
 };
 
 export default CardsView;
