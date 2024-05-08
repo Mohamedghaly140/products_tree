@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { moderateScaleSize } from '../utils';
 
 interface ItemCardProps {
   children: React.ReactNode;
@@ -17,10 +18,10 @@ export default ItemCard;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
+    borderWidth: moderateScaleSize(1),
     borderColor: 'black',
-    margin: 4,
-    padding: 8,
-    borderRadius: 8,
+    margin: moderateScaleSize(4),
+    padding: moderateScaleSize(8),
+    borderRadius: moderateScaleSize(8),
   },
 });

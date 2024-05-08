@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, View } from 'react-native';
 import TreeItem from './TreeItem';
+import { moderateScaleSize } from '../utils';
 
 interface ProductsTreeProps {
   level?: number;
@@ -16,7 +17,11 @@ const ProductsTree: React.FC<ProductsTreeProps> = ({
   selectedItems,
 }) => {
   return (
-    <View style={[styles.container, { paddingStart: level * 16 }]}>
+    <View
+      style={[
+        styles.container,
+        { paddingStart: level * moderateScaleSize(16) },
+      ]}>
       <FlatList
         data={data}
         keyExtractor={({ id }) => id.toString()}

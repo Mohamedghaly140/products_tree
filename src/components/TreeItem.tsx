@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import ProductsTree from './ProductsTree';
+import { moderateScaleSize, scaleSize, verticalScaleSize } from '../utils';
 
 interface TreeItemProps {
   selected?: boolean;
@@ -43,13 +44,13 @@ export default TreeItem;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    columnGap: 8,
-    paddingVertical: 4,
+    columnGap: moderateScaleSize(8),
+    paddingVertical: moderateScaleSize(4),
   },
   checkbox: {
-    width: 16,
-    height: 16,
-    borderWidth: 1,
+    width: scaleSize(16),
+    height: verticalScaleSize(16),
+    borderWidth: moderateScaleSize(1),
     borderColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
